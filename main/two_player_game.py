@@ -159,6 +159,8 @@ def game():
                 exit()
             if initial.capitalize() == 'O':
                 options.displayOptions()
+                options.optionBar()
+                board.display()
                 continue
             if len(initial) != 2:
                 print("INVALID INPUT")

@@ -23,6 +23,7 @@ def about():
     print("")
     
 def play():
+    print("")
     print(colored('WELCOME TO CHECKERS!!!       ', 'blue', 'on_cyan'))
     print(colored('                             ', 'blue', 'on_cyan'))
     ind = colored(' (1) ', 'dark_grey', 'on_white')
@@ -52,7 +53,7 @@ def play():
         case '1':
             two_player_game.game()
         case '2':
-            print("UNDER DEVELOPMENT")
+            print("BOT UNDER DEVELOPMENT!!!!")
             play()
         case '3':
             instructions()
@@ -64,4 +65,7 @@ def play():
             print("THANKS FOR PLAYING CHECKERS!!")
             print("EXITING CHECKERS")
             exit_game()
+        case _:
+            print(colored("CHOOSE FROM GIVEN INDICES",'white', 'on_red'))
+            play()
    

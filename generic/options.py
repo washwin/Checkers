@@ -5,12 +5,14 @@ current = os.path.dirname(os.path.realpath(__file__))
 parent = os.path.dirname(current)
 sys.path.append(parent)
 from main import play
+from main import two_player_game
 
 def optionBar():
     bar = colored('                          OPTIONS(O) QUIT(Q)', 'black', 'on_white')
     print(bar)
 
 def displayOptions():
+    print("")
     ind = colored(' (1) ', 'dark_grey', 'on_white')
     text = colored(' RESUME GAME        ', 'blue', 'on_cyan')
     print(ind, end="")
@@ -38,11 +40,16 @@ def displayOptions():
         case '1':
             return
         case '2':
-            return
+            two_player_game.game()
         case '3':
             play.instructions()
             return
         case '4':
             play.play()
         case '5':
+            print("THANKS FOR PLAYING CHECKERS!!")
+            print("EXITING CHECKERS")
             play.exit_game()
+        case _:
+            print(colored("CHOOSE FROM GIVEN INDICES", 'white','on_red'))
+            displayOptions()
