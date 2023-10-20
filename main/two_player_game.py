@@ -138,7 +138,7 @@ def testing(board):
 
 def game():
     board = util.Board()
-    testing(board)
+    # testing(board)
     turn = 0
     while not gameOver(board):
         options.optionBar()
