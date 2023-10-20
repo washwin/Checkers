@@ -202,6 +202,3 @@ def game():
         print("")
         print("")
         turn = turn + 1
-
-
-game()

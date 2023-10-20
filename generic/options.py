@@ -1,4 +1,10 @@
 from termcolor import colored
+import sys
+import os
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+sys.path.append(parent)
+from main import play
 
 def optionBar():
     bar = colored('                          OPTIONS(O) QUIT(Q)', 'black', 'on_white')
@@ -27,29 +33,16 @@ def displayOptions():
     print(text)
 
     c = input("CHOOSE INDEX : ")
+    print("")
     match c:
         case '1':
             return
         case '2':
             return
         case '3':
-            instructions()
+            play.instructions()
             return
         case '4':
-            return
+            play.play()
         case '5':
-            return
-            
-def instructions():
-    print("INSTRUCTIONS")
-    print("#TAKING A TURN")
-    print(" Each player takes their turn by moving a piece. Pieces are always moved diagonally and can be moved in the following ways:")
-    print("Diagonally in the forward direction (towards the opponent) to the next dark square.")
-    print("If there is one of the opponent's pieces next to a piece and an empty space on the other side, you jump your opponent and remove their piece. You can do multiple jumps if they are lined up in the forward direction. *** note: if you have a jump, you have no choice but to take it.")
-    print("KING PIECES")
-    print("The last row is called the king row. If you get a piece across the board to the opponent's king row, that piece becomes a king. Another piece is placed onto that piece so it is now two pieces high. King pieces can move in both directions, forward and backward.")
-    print("WINNING THE GAME")
-    print("You win the game when the opponent has no more pieces or can't move (even if he/she still has pieces). If neither player can move then it is a draw or a tie.")
-
-
-displayOptions()
+            play.exit_game()
