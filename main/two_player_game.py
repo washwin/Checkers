@@ -6,7 +6,8 @@ sys.path.append(parent)
 from generic import util
 from generic import movegen
 from generic import options
-        
+from main import play
+
 def convert(point):
     op = []
     match point[0].capitalize():
@@ -101,10 +102,12 @@ def gameOver(board):
         else:
             player2 = False
     if player1:
+        board.display()
         print("GAME OVER")
         print("PLAYER 2 WINS!!!")
         return True
     if player2:
+        board.display()
         print("GAME OVER")
         print("PLAYER 1 WINS!!!")
         return True
@@ -144,10 +147,10 @@ def game():
         options.optionBar()
         board.display()
         if turn%2 == 0:
-            print("PLAYER 1's TURN")
+            print("PLAYER 1's TURN (RED)")
             color = "red"
         else:
-            print("PLAYER 2's TURN")
+            print("PLAYER 2's TURN (BLACK)")
             color = "black"
         initialflag = True
         finalflag = True
@@ -158,7 +161,7 @@ def game():
                 print("EXITING CHECKERS")
                 exit()
             if initial.capitalize() == 'O':
-                options.displayOptions()
+                options.displayOptions(0)
                 options.optionBar()
                 board.display()
                 continue
@@ -176,6 +179,15 @@ def game():
                 initialflag = False       
         while finalflag:
             final = input("PLACE COIN TO: ")
+            if final.capitalize() == 'Q':
+                print("THANKS FOR PLAYING CHECKERS!")
+                print("EXITING CHECKERS")
+                exit()
+            if final.capitalize() == 'O':
+                options.displayOptions(0)
+                options.optionBar()
+                board.display()
+                continue
             if len(final) != 2:
                 print("INVALID INPUT")
                 continue
@@ -204,3 +216,5 @@ def game():
         print("")
         print("")
         turn = turn + 1
+    print("RETURNING TO MAIN MENU")
+    play.play()

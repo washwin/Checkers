@@ -1,6 +1,7 @@
 import sys
 from termcolor import colored
 from main import two_player_game
+from main import bot_game
 
 def instructions():
     print("INSTRUCTIONS")
@@ -53,8 +54,7 @@ def play():
         case '1':
             two_player_game.game()
         case '2':
-            print("BOT UNDER DEVELOPMENT!!!!")
-            play()
+            bot_game.game()
         case '3':
             instructions()
             play()
