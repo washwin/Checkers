@@ -6,33 +6,33 @@ def checkKill(board,color):
                 loc = coin.getPosition()
                 if not coin.isKing():
                     i = board.getCoinByPos((loc[0]+1,loc[1]+1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]+2,loc[1]+2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]+2,loc[1]+2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]-1,loc[1]+1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]-2,loc[1]+2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]-2,loc[1]+2) not in board.getAllCoins():
                                 killcoins.append(loc)
                 else:
                     i = board.getCoinByPos((loc[0]+1,loc[1]+1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]+2,loc[1]+2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]+2,loc[1]+2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]-1,loc[1]+1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]-2,loc[1]+2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]-2,loc[1]+2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]+1,loc[1]-1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]+2,loc[1]-2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]+2,loc[1]-2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]-1,loc[1]-1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]-2,loc[1]-2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]-2,loc[1]-2) not in board.getAllCoins():
                                 killcoins.append(loc)
@@ -42,33 +42,33 @@ def checkKill(board,color):
                 loc = coin.getPosition()
                 if not coin.isKing():
                     i = board.getCoinByPos((loc[0]+1,loc[1]-1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]+2,loc[1]-2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]+2,loc[1]-2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]-1,loc[1]-1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]-2,loc[1]-2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]-2,loc[1]-2) not in board.getAllCoins():
                                 killcoins.append(loc)
                 else:
                     i = board.getCoinByPos((loc[0]+1,loc[1]+1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]+2,loc[1]+2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]+2,loc[1]+2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]-1,loc[1]+1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]-2,loc[1]+2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]-2,loc[1]+2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]+1,loc[1]-1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]+2,loc[1]-2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]+2,loc[1]-2) not in board.getAllCoins():
                                 killcoins.append(loc)
                     i = board.getCoinByPos((loc[0]-1,loc[1]-1))
-                    if i != 26:
+                    if i != 26 and isTile((loc[0]-2,loc[1]-2)):
                         if board.coins[i].getColor() != color:
                             if (loc[0]-2,loc[1]-2) not in board.getAllCoins():
                                 killcoins.append(loc)

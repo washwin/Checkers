@@ -6,12 +6,13 @@ parent = os.path.dirname(current)
 sys.path.append(parent)
 from main import play
 from main import two_player_game
+from main import bot_game
 
 def optionBar():
     bar = colored('                          OPTIONS(O) QUIT(Q)', 'black', 'on_white')
     print(bar)
 
-def displayOptions():
+def displayOptions(i):
     print("")
     ind = colored(' (1) ', 'dark_grey', 'on_white')
     text = colored(' RESUME GAME        ', 'blue', 'on_cyan')
@@ -40,7 +41,10 @@ def displayOptions():
         case '1':
             return
         case '2':
-            two_player_game.game()
+            if i == 0:
+                two_player_game.game()
+            else:
+                bot_game.game()
         case '3':
             play.instructions()
             return
