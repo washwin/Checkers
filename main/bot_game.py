@@ -10,7 +10,7 @@ from generic import options
 from bot import beginner_bot
 from bot import moderate_bot
 from bot import expert_bot
-import two_player_game
+from main import two_player_game
 from main import play
 
 def gameOver(board):
