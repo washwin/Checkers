@@ -138,7 +138,6 @@ def makeMove(board, color, mc):
         if fp not in acm:
             print("INVALID MOVE, CHOOSE FROM THE FOLLOWING")
             for m in acm:
-                print("m: ",m)
                 print(convertback(m),end=" ")
             print("")
         else:
@@ -193,20 +192,12 @@ def makeMultiKillMove(board, color, cp):
         makeMultiKillMove(board, color, cp)
 
 def gameOver(board):
-    player1 = True
-    player2 = True
-    for coin in board.coins:
-        if coin.getColor() == "red":
-            player1 = False
-        else:
-            player2 = False
-    if player1:
-        board.display()
+    if movegen.coinsToMove(board, 'red') is None:
         print("GAME OVER")
         print("PLAYER 2 WINS!!!")
         return True
-    if player2:
-        board.display()
+    
+    if movegen.coinsToMove(board, 'black') is None:
         print("GAME OVER")
         print("PLAYER 1 WINS!!!")
         return True
@@ -240,7 +231,7 @@ def testing(board):
 
 def game():
     board = util.Board()
-    testing(board)
+    # testing(board)
     turn = 0
     while not gameOver(board):
         options.optionBar()
