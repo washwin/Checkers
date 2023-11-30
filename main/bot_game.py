@@ -83,12 +83,13 @@ def human(board):
         else:
             finalflag = False
     board.moveCoin(ip,fp) 
-    if fp[1] == ip[1] + 2 or fp[1] == ip[1] - 2:
-        board.eliminate((int((ip[0]+fp[0])/2), int((ip[1]+fp[1])/2)))
     if fp[1] == 8:
         board.coins[board.getCoinByPos(fp)].setKing()
-
-
+    if fp[1] == ip[1] + 2 or fp[1] == ip[1] - 2:
+        board.eliminate((int((ip[0]+fp[0])/2), int((ip[1]+fp[1])/2)))
+        if movegen.checkMultiKill(board, fp):
+            two_player_game.makeMultiKillMove(board, 'red', fp)
+    
 def game():
     print(colored(' CHOOSE DIFFICULTY        ', 'blue', 'on_cyan'))
     ind = colored(' (1) ', 'dark_grey', 'on_white')
@@ -120,19 +121,14 @@ def game():
     board = util.Board()
     turn = 0
     while not gameOver(board):
-        options.optionBar()
-        board.display()
         if turn%2 == 0:
+            options.optionBar()
+            board.display()
             print("YOUR TURN (RED)")
             human(board)
         else:
             print("MY TURN (BLACK)")
-            coin, move = bot.bot(board)
-            board.moveCoin(coin,move)
-            if move[1] == coin[1] - 2 or move[1] == coin[1] + 2:
-                board.eliminate((int((coin[0]+move[0])/2), int((coin[1]+move[1])/2)))
-            if move[1] == 1:
-                board.coins[board.getCoinByPos(move)].setKing()
+            bot.bot(board)
         turn = turn + 1
         print("")
         print("")
