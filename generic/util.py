@@ -93,6 +93,13 @@ class Board:
             positions.append(coin.getPosition())
         return positions
     
+    def getAllBlackCoins(self):
+        positions = []
+        for coin in self.coins:
+            if coin.getColor() == 'black':
+                positions.append(coin.getPosition())
+        return positions
+    
     def getCoinByPos(self, loc):
         i = 0
         for pos in self.getAllCoins():
@@ -100,7 +107,7 @@ class Board:
                 return i
             i = i+1
         return 26
-    
+        
     def moveCoin(self, initial, final):
         i = self.getCoinByPos(initial)
         if i == 26:             #invalid initial position

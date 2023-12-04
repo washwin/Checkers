@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/Admin/AppData/Local/Temp/4d49caff-af48-4b0c-a373-11635810a2b4_18.zip.2b4/18/Desdemona/bots/AlphaBetaBot",
+      "program": "c:/Users/Admin/AppData/Local/Temp/4d49caff-af48-4b0c-a373-11635810a2b4_18.zip.2b4/18/Desdemona/bots/AlphaBetaBot/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -82,7 +82,7 @@ def human(board):
             print("")
         else:
             finalflag = False
-    board.moveCoin(ip,fp) 
+    board.moveCoin(ip,fp)
     if fp[1] == 8:
         board.coins[board.getCoinByPos(fp)].setKing()
     if fp[1] == ip[1] + 2 or fp[1] == ip[1] - 2:
@@ -91,7 +91,7 @@ def human(board):
             two_player_game.makeMultiKillMove(board, 'red', fp)
     
 def game():
-    print(colored(' CHOOSE DIFFICULTY        ', 'blue', 'on_cyan'))
+    print(colored(' CHOOSE DIFFICULTY            ', 'blue', 'on_cyan'))
     ind = colored(' (1) ', 'dark_grey', 'on_white')
     text = colored(' BEGINNER                ', 'blue', 'on_cyan')
     print(ind, end="")
@@ -100,7 +100,7 @@ def game():
     text = colored(' MODERATE                ', 'blue', 'on_cyan')
     print(ind, end="")
     print(text)
-    ind = colored(' (1) ', 'dark_grey', 'on_white')
+    ind = colored(' (3) ', 'dark_grey', 'on_white')
     text = colored(' EXPERT                  ', 'blue', 'on_cyan')
     print(ind, end="")
     print(text)
